@@ -15,6 +15,9 @@ import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from "./screens/OrderScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
+import ProductListScreen from "./screens/ProductListScreen";
+import ProductEditScreen from "./screens/ProductEditScreen";
+import OrderListScreen from "./screens/OrderListScreen";
 
 const App = () => {
   return (
@@ -37,8 +40,12 @@ const App = () => {
                 <Route path="" element={<CartScreen />} />
               </Route>
               <Route path="/admin/userlist" element={<UserListScreen />}></Route>
+              <Route path="/admin/Productlist" element={<ProductListScreen />}></Route>
+              <Route path="/admin/Productlist/:pageNmuber" element={<ProductListScreen />} exact></Route>
+              <Route path="/admin/orderlist" element={<OrderListScreen />} exact></Route>
+              <Route path="/admin/product/:id/edit" element={<ProductEditScreen />}></Route>
               <Route path="/admin/user/:id/edit" element={<UserEditScreen />}></Route>
-              <Route path="/search/:keyword" element={<HomeScreen />}></Route>
+              <Route path="/search/:keyword" element={<HomeScreen />} exact></Route>
               <Route path="/page/:pageNumber" element={<HomeScreen />}></Route>
               <Route path="/search/:keyword/page/:pageNumber" element={<HomeScreen />}></Route>
               <Route path="/" element={<HomeScreen />}></Route>

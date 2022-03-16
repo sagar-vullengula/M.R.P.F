@@ -15,7 +15,7 @@ export default function SearchBox() {
   };
 
   return (
-    <Form onSubmit={submitHandler} inline className='d-flex'>
+    <Form onSubmit={submitHandler} inline="true" className='d-flex'>
       <Form.Control
         type='text'
         name='q'
@@ -29,5 +29,3 @@ export default function SearchBox() {
     </Form>
   )
 }
-
-// export default SearchBox

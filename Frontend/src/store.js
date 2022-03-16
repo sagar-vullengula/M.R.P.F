@@ -7,13 +7,17 @@ import { userLoginReducer } from './reducers/userReducers'
 import { userRegisterReducer } from './reducers/userReducers'
 import { userDetailsReducer } from './reducers/userReducers'
 import { userUpdateProfileReducer, userListReducer, userDeleteReducer, userUpdateReducer } from './reducers/userReducers'
-import { orderCreateReducer, orderDetailsReducer, orderPayReducer, orderListMyReducer } from './reducers/orderReducers'
-import { productReviewCreateReducer } from './reducers/productReducers'
+import { orderCreateReducer, orderDetailsReducer, orderPayReducer, orderListMyReducer, orderListReducer, orderDeliverReducer } from './reducers/orderReducers'
+import { productReviewCreateReducer, productTopRatedReducer, productDeleteReducer, productCreateReducer, productUpdateReducer } from './reducers/productReducers'
 
 const reducer = combineReducers({ 
    productList: productListReducer,
    productDetails: productDetailsReducer,
+   productDelete: productDeleteReducer,
+   productCreate: productCreateReducer,
+   productUpdate: productUpdateReducer,
    productReviewCreate: productReviewCreateReducer,
+   productTopRated: productTopRatedReducer,
    cart: cartReducer,
    userLogin: userLoginReducer,
    userRegister: userRegisterReducer,
@@ -26,6 +30,8 @@ const reducer = combineReducers({
    orderDetails: orderDetailsReducer,
    orderPay :orderPayReducer,
    orderListMy :orderListMyReducer,
+   orderList: orderListReducer,
+   orderDeliver: orderDeliverReducer,
  })
 
 const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse

@@ -15,6 +15,7 @@ import Rating from "../components/Rating";
 import { useParams } from "react-router-dom";
 import { listProductDetails, createProductReview } from "../actions/productAction";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 import Message from "../components/Message";
 import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants";
 
@@ -81,6 +82,7 @@ const ProductScreen = ({ history }) => {
         <Message variant="danger">{error}</Message>
       ) : (
         <>
+        <Meta title={product.name} />
         <Row>
           <Col md={6}>
             <Image src={product.image} alt={product.name} fluid />
