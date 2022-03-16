@@ -49,7 +49,7 @@ const LoginScreen = ({ history }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='password'>
+        <Form.Group controlId='password' className='my-3'>
           <Form.Label>Password Address</Form.Label>
           <Form.Control
             type='password'
