@@ -20,6 +20,7 @@ import {
     ORDER_DELIVER_SUCCESS,
     ORDER_DELIVER_FAIL,
     ORDER_DELIVER_RESET,
+    ORDER_CREATE_RESET,
     // ORDER_PAY_REQUEST,
     // ORDER_PAY_FAIL,
     // ORDER_PAY_SUCCESS,
@@ -55,8 +56,8 @@ import {
           loading: false,
           error: action.payload,
         }
-    //   case ORDER_CREATE_RESET:
-    //     return {}
+      case ORDER_CREATE_RESET:
+        return {}
       default:
         return state
     }

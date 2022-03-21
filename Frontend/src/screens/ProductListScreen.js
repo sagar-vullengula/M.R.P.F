@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
+import { LinkContainer } from 'react-router-bootstrap'
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { LinkContainer } from 'react-router-bootstrap'
 import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
@@ -14,13 +14,13 @@ import {
 } from '../actions/productAction'
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
-const ProductListScreen = ({  }) => {
+const ProductListScreen = ( ) => {
   const params = useParams();
+  const dispatch = useDispatch()
   const navigate = useNavigate();
 
-  const pageNumber = params.pageNumber || 1
 
-  const dispatch = useDispatch()
+  const pageNumber = params.pageNumber || 1
 
   const productList = useSelector((state) => state.productList)
   const { loading, error, products, page, pages } = productList
@@ -47,11 +47,11 @@ const ProductListScreen = ({  }) => {
     dispatch({ type: PRODUCT_CREATE_RESET })
 
     if (!userInfo || !userInfo.isAdmin) {
-        navigate('/login')
+      navigate('/login')
     }
 
     if (successCreate) {
-        navigate(`/admin/product/${createdProduct._id}/edit`)
+      navigate(`/admin/product/${createdProduct._id}/edit`)
     } else {
       dispatch(listProducts('', pageNumber))
     }
@@ -64,7 +64,6 @@ const ProductListScreen = ({  }) => {
     createdProduct,
     pageNumber,
   ])
-
 
   const deleteHandler = (id) => {
     if (window.confirm('Are you sure')) {

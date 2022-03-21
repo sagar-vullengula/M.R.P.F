@@ -6,7 +6,7 @@ import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 import { savePaymentMethod } from '../actions/cartActions'
 
-const PaymentScreen = ({  }) => {
+const PaymentScreen = ( ) => {
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 

@@ -38,7 +38,53 @@ const { loading, error, products, page, pages } = productList
           Go Back
         </Link>
       )}
+
+<h1>Electronics Accessories</h1>
+
+            <Row>
+              {loading ? (
+                <Loader />
+              ) : error ? (
+                <Message varient="#FC308B">{error}</Message>
+              ) : (
+                products && (
+                  <>
+                    {products
+                    .filter((p) => p.category === "electronicsAccessories")
+                      .map((electronics_accessories, index) => (
+                        <Col key={index} sm={12} md={6} lg={4} xl={3}>
+                          <Product product={electronics_accessories} />
+                        </Col>
+                      ))}
+                  </>
+                )
+              )}
+            </Row>
+
+      <h1>Home Appliances</h1>
+
+            <Row>
+              {loading ? (
+                <Loader />
+              ) : error ? (
+                <Message varient="#FC308B">{error}</Message>
+              ) : (
+                products && (
+                  <>
+                    {products
+                      .filter((p) => p.category === "homeAppliances")
+                      .map((home_appliance, index) => (
+                        <Col key={index} sm={12} md={6} lg={4} xl={3}>
+                          <Product product={home_appliance} />
+                        </Col>
+                      ))}
+                  </>
+                )
+              )}
+            </Row>
+
       <h1>Latest Products</h1>
+      
       {loading ? (
         <Loader />
       ) : error ? (

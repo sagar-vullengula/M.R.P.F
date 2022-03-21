@@ -7,7 +7,7 @@ import FormContainer from '../components/FormContainer'
 import CheckoutSteps from '../components/CheckoutSteps'
 
 
-const ShippingScreen = ({  }) => {
+const ShippingScreen = ( ) => {
   const cart = useSelector((state) => state.cart)
   const { shippingAddress } = cart
 
